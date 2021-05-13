@@ -14,7 +14,13 @@ html {
 
 .navbar-collapse {
   background-color: #f6f6f6;
-  padding: 8;
+  padding: 10px 0px 20px 20px;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.navbar-collapse ul li a {
+  border-bottom: solid 2px #c4b4b5 !important;
 }
 
 .dropdown-menu {
@@ -31,7 +37,7 @@ html {
 .dropdown-item {
   background-color: #C4B4B5 !important;
   border-radius: 2px !important;
-  padding: 10px 0px 0px 8px !important;
+  padding: 0px 0px 0px 8px !important;
 }
 
 .navbar-toggler {
@@ -219,7 +225,8 @@ html {
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
   border-radius: 2px;
   padding-right: 0;
-  max-width: 290px;
+  max-width: 100%;
+  text-align: left;
 }
 
 .seccion {
@@ -285,10 +292,42 @@ html {
 .jumbotron {
   background-image: url("https://images.squarespace-cdn.com/content/v1/545a9a64e4b059216c7d938d/1559738966872-07YQICZ1S32O9ZCR39FJ/ke17ZwdGBToddI8pDm48kN_ZoNdj1kv_gIvm4zjH76N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0jG2lbcDYBOeMi4OFSYem8AelHsSihC3tfiYK1eHEM7W3AVjJQSBul2wE-DqW7dygg/LightTest_May2019_20.jpg?format=1500w") !important;
   background-size: cover;
-  height: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
   width: 100%;
   margin: 0 auto !important;
   padding: 0;
+  background-position: center;
+}
+
+#jumbotronpadre {
+  position: relative;
+  display: block;
+}
+
+#jumbotronhijo {
+  position: absolute;
+  z-index: 9;
+  width: 400px;
+  top: 80px;
+}
+
+@media (max-width: 768px) {
+  #jumbotronhijo {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .home-container {
+    text-align: center;
+    margin-left: 0 !important;
+  }
+
+  .home-container .call-to-action {
+    margin: 0 auto;
+  }
+
 }
 
 .big-banner {
@@ -335,6 +374,131 @@ html {
   font-family: 'raleway';
 }
 
+input[type=name] {
+  border-radius: 2px;
+  border: 2px solid #C4B4B5;
+}
+
+input[type=email] {
+  border-radius: 2px;
+  border: 2px solid #C4B4B5;
+}
+
+[type="radio"]{
+  opacity:0;
+}
+
+[type="radio"] + label{
+  position:relative;
+  padding-left:30px;
+  cursor:pointer;
+  display:inline-block;
+  color:black;
+  line-height:25px;
+}
+
+[type="radio"] + label::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:18px;
+  height:18px;
+  border-radius: 100%;
+  border:2px solid #c4b4b5;
+  background:#fff;
+}
+
+[type="radio"]:checked + label::after{
+  content:"";
+  position:absolute;
+  left:3px;
+  top:3px;
+  width:12px;
+  height:12px;
+  line-height: 25px;
+  border-radius:100%;
+  background:#c4b4b5;
+  transform:scale(1);
+  opacity:1;
+  transition:all .2s ease;
+}
+
+[type="radio"]:not(:checked) + label::after{
+  content:"";
+  position:absolute;
+  left:4px;
+  top:4px;
+  width:14px;
+  height:14px;
+  border-radius:100%;
+  background:#fff;
+  transform:scale(0);
+  opacity:0;
+}
+
+[type="checkbox"]{
+  opacity:0;
+}
+
+[type="checkbox"] + label{
+  position:relative;
+  padding-left:30px;
+  cursor:pointer;
+  display:inline-block;
+  color:black;
+  line-height:25px;
+}
+
+[type="checkbox"] + label::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:18px;
+  height:18px;
+  border-radius: 2px;
+  border:2px solid #c4b4b5;
+  background:#fff;
+}
+
+[type="checkbox"]:checked + label::after{
+  content:"";
+  position:absolute;
+  left:3px;
+  top:3px;
+  width:12px;
+  height:12px;
+  line-height: 25px;
+  border-radius:2px;
+  background:#c4b4b5;
+  transform:scale(1);
+  opacity:1;
+  transition:all .2s ease;
+}
+
+[type="checkbox"]:not(:checked) + label::after{
+  content:"";
+  position:absolute;
+  left:4px;
+  top:4px;
+  width:14px;
+  height:14px;
+  border-radius:100%;
+  background:#fff;
+  transform:scale(0);
+  opacity:0;
+}
+
+.form-control{
+  border-radius: 2px !important;
+  border: 2px solid #C4B4B5 !important;
+}
+
+input:focus, textarea {
+  outline: none !important;
+}
+
 .form-control-search {
   color: #f6f6f6 !important;
   font-size: x-large !important;
@@ -343,11 +507,11 @@ html {
   border: none !important;
   justify-content: center;
   padding: 0px 0px 0px 40px;
+  max-width: 280px;
 }
 
 .form-inline-search {
   outline: none !important;
-
 }
 
 .recuadro {
@@ -373,6 +537,7 @@ html {
 .carousel-slide {
   margin-top: 100px;
   margin-bottom: 100px;
+  width: 50vw;
 }
 
 .recuadro2 {
@@ -551,7 +716,7 @@ html {
 
 .product-grid5 .social li a img {
   height:20px;
-  width:20px;
+  width:20px;  
 }
 
 .product-grid5 .select-options {
